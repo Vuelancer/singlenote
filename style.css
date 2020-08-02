@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+::selection {
+  background-color: lightgreen;
+  color: black;
+}
+
 body {
   overflow: hidden;
 }
@@ -11,6 +17,7 @@ body {
 }
 
 .download {
+  cursor: pointer;
   width: 3.5rem;
   position: absolute;
   bottom: 1.5rem;
@@ -18,6 +25,7 @@ body {
   padding: 0.5rem;
   border-radius: 100%;
   box-shadow: 0 0 10px 0 lightgreen;
+  z-index: 10;
 }
 
 .download:hover {
@@ -26,17 +34,15 @@ body {
 
 textarea {
   background: "#fff";
-  caret-color: violet;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  font-size: 2rem;
+  caret-color: purple;
   color: lightgreen;
   line-height: 2.5rem;
-  padding: 1rem;
-  overflow: auto;
+  overflow: none;
   outline: none;
   resize: none;
-  border-width: 5px;
-  border-style: solid;
-  border-color: lightgreen;
-  width: 100%;
-  height: 100vh;
-  font-size: 2rem;
+  border: .5rem solid lightgreen;
 }

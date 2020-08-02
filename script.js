@@ -1,19 +1,22 @@
+if (localStorage.getItem("notes")) {
+  input.value = localStorage.getItem("notes");
+}
+
+input.addEventListener("change", function () {
+  localStorage.setItem("notes", input.value);
+});
+
 download.addEventListener(
   "click",
   () => {
-    var input = document.getElementById("input").value;
-    var data = new Blob([input], {
-      type: "text/plain"
+    var data = new Blob([input.value], {
+      type: "text/plain",
     });
-    var textFile = "";
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-    textFile = window.URL.createObjectURL(data);
-    const a = document.createElement('a');
-    a.href = textFile;
-    a.download = "download.txt"
+    const a = document.createElement("a");
+    a.href = window.URL.createObjectURL(data);
+    a.download = "download.txt";
     a.click();
+    window.URL.revokeObjectURL(a.href);
   },
   false
 );
