@@ -14,7 +14,7 @@ download.addEventListener(
     });
     const a = document.createElement("a");
     a.href = window.URL.createObjectURL(data);
-    a.download = "download.txt";
+    a.download = "download.md";
     a.click();
     window.URL.revokeObjectURL(a.href);
   },
