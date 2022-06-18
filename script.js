@@ -10,7 +10,7 @@ download.addEventListener(
   "click",
   () => {
     var data = new Blob([input.value], {
-      type: "text/plain",
+      type: "text/markdown",
     });
     const a = document.createElement("a");
     a.href = window.URL.createObjectURL(data);
